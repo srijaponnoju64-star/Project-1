@@ -5,7 +5,7 @@ import { getVolunteerMe, updateVolunteerMe, getMatches, acceptMatch, rejectMatch
 export default function VolunteerPortal() {
   const { user, logout, notifications, unreadCount, clearUnread } = useAuth();
   const [tab, setTab]           = useState('application');
-  const [profile, setProfile]   = useState(null);
+  const [_profile, setProfile]   = useState(null);
   const [matches, setMatches]   = useState([]);
   const [myApps, setMyApps]     = useState([]);
   const [showNotif, setShowNotif] = useState(false);

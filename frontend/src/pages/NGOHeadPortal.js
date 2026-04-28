@@ -5,7 +5,7 @@ import {
   getTeamMembers, getPendingVolunteers, getPendingTeam,
   approveTeamMember, approveVolunteer, rejectVolunteer,
   getAnalyticsOverview, getAllApplications, analyseApplication, decideApplication,
-  getNotifications
+ 
 } from '../services/api';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend } from 'recharts';
 import axios from 'axios';
@@ -38,14 +38,14 @@ export default function NGOHeadPortal() {
   const [selectedApp, setSelectedApp]   = useState(null);
   const [appDecision, setAppDecision]   = useState({ decision:'', response:'' });
 
-  useEffect(() => { loadAll(); }, []);
+  useEffect(() => { loadAll(); }, [loadAll]);
   useEffect(() => { loadAll(); }, [search, filterStatus, filterCat, filterUrg]);
 
   // Track history
   useEffect(() => {
     const item = { time: new Date().toLocaleString(), action: 'Portal accessed by ' + user?.name };
     setHistory(prev => [item, ...prev.slice(0, 49)]);
-  }, []);
+  }, [user?.name]);
 
   const loadAll = async () => {
     try {

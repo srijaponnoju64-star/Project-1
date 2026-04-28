@@ -15,7 +15,7 @@ export default function UserPortal() {
   const [success, setSuccess]   = useState('');
   const [showNotif, setShowNotif] = useState(false);
   const [recording, setRecording] = useState(false);
-  const [transcript, setTranscript] = useState('');
+  const [_transcript, setTranscript] = useState('');
   const recognitionRef = useRef(null);
   const [form, setForm] = useState({
     title:'', description:'', category:'food', urgencyLevel:'medium', location:'', peopleAffected:1
