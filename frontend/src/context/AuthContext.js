@@ -28,7 +28,7 @@ export const AuthProvider = ({ children }) => {
 
   const connectSocket = (userId) => {
     if (socket) socket.disconnect();
-    socket = io('http://localhost:5000');
+    socket = io('https://project-1-backend-ejbo.onrender.com/api');
     socket.on('connect', () => socket.emit('join_room', userId));
     socket.on('notification', (notif) => {
       setNotifications(prev => [{ ...notif, id: Date.now(), createdAt: new Date() }, ...prev]);

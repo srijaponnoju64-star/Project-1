@@ -133,7 +133,7 @@ export default function NGOHeadPortal() {
     if (!sendNotifForm.title || !sendNotifForm.message) return alert('Enter title and message');
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:5000/api/notifications/send', sendNotifForm, { headers: { Authorization: 'Bearer ' + token } });
+      await axios.post('https://project-1-backend-ejbo.onrender.com/api', sendNotifForm, { headers: { Authorization: 'Bearer ' + token } });
       addHistory('Notification sent to ' + sendNotifForm.to + ': ' + sendNotifForm.title);
       alert('✅ Notification sent!');
       setSendNotifForm({ to:'all', message:'', title:'' });
